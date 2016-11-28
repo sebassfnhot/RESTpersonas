@@ -7,7 +7,7 @@ class PeopleDB {
     const LOCALHOST = '172.30.32.95';
     const USER = 'myuser';
     const PASSWORD = 'mypassword';
-    const DATABASE = 'mydatabase';
+    const DATABASE = 'mydb';
     
     /**
      * Constructor de clase
@@ -15,7 +15,7 @@ class PeopleDB {
     public function __construct() {           
         try{
             //conexión a base de datos
-            $this->mysqli = new mysqli(self::LOCALHOST, self::USER, self::PASSWORD, self::DATABASE);
+            $this->mysqli = new mysqli("MYSQL_HOST", self::USER, self::PASSWORD, self::DATABASE);
         }catch (mysqli_sql_exception $e){
             //Si no se puede realizar la conexión
             http_response_code(500);
